@@ -2,8 +2,10 @@ package org.custombrowser;
 
 import java.util.Scanner;
 
+import org.custombrowser.cssomparser.CssomParser;
 import org.custombrowser.domparser.DomParser;
 import org.custombrowser.network.NetworkManager;
+import org.jsoup.nodes.Document;
 
 public class Main {
 
@@ -13,6 +15,7 @@ public class Main {
 
         NetworkManager networkManager = new NetworkManager();
         DomParser domParser = new DomParser();
+        CssomParser cssomParser = new CssomParser();
 
         // Example usage: Fetching a page
         String url;
@@ -23,7 +26,8 @@ public class Main {
         networkManager.fetchPage(url)
                 .thenAccept(html -> {
                     if (html != null) {
-                        domParser.parse(html); // Parses only when HTML string is ready
+                        Document doc = domParser.parse(html); // Parses only when HTML string is ready
+                        cssomParser.parse(doc);
                     }
                 }).join();
 
