@@ -26,4 +26,5 @@ A custom web browser project built in Java that fetches web pages and parses the
 Once the program starts, it will prompt you to enter a URL.
 You can enter a domain like `example.com` or a full URL like `https://example.com`.
 The application will asynchronously fetch the webpage, print the HTTP status code, and process the HTML.
-It will further show you the number of hyperlinks it got from the html and successively list them out
+
+JavaFx webview and webEngine have been incorporated to render and show webpages now. 
