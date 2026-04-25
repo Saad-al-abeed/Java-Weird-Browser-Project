@@ -20,3 +20,7 @@ target/
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# ideas
+CssomParser.md
+recent_updates.md
